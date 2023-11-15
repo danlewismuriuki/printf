@@ -4,8 +4,8 @@
 
 /**
  * custom_print_identifiers - prints special characters
- * @next: character after the %
- * @arg: argument for the identifier
+ * @nxt_char: character after the %
+ * @arg_var: argument for the identifier
  * Return: the number of characters printed
  * (excluding the null byte used to end output to strings)
  */
@@ -36,45 +36,45 @@ int custom_print_identifiers(char nxt_char, va_list arg_var)
 }
 
 /**
- * custom_printf - mimic printf from stdio
+ * _printf - mimic printf from stdio
  * Description: produces output according to a format
  * write output to stdout, the standard output stream
- * @fmt: character string composed of zero or more directives
+ * @format: character string composed of zero or more directives
  *
  * Return: the number of characters printed
  * (excluding the null byte used to end output to strings)
  * return -1 for incomplete identifier error
  */
 
-int custom_printf(const char *fmt, ...)
+int _printf(const char *format, ...)
 {
 	unsigned int i;
 	int idPrinted = 0, chPrinted = 0;
 	va_list args;
 
-	va_start(args, fmt);
-	if (fmt == NULL)
+	va_start(args, format);
+	if (format == NULL)
 		return (-1);
 
-	for (i = 0; fmt[i] != '\0'; i++)
+	for (i = 0; format[i] != '\0'; i++)
 	{
-		if (fmt[i] != '%')
+		if (format[i] != '%')
 		{
-			_putchar(fmt[i]);
+			_putchar(format[i]);
 			chPrinted++;
 			continue;
 		}
-		if (fmt[i + 1] == '%')
+		if (format[i + 1] == '%')
 		{
 			_putchar('%');
 			chPrinted++;
 			i++;
 			continue;
 		}
-		if (fmt[i + 1] == '\0')
+		if (format[i + 1] == '\0')
 			return (-1);
 
-		idPrinted = custom_print_identifiers(fmt[i + 1], args);
+		idPrinted = custom_print_identifiers(format[i + 1], args);
 		if (idPrinted == -1 || idPrinted != 0)
 			i++;
 		if (idPrinted > 0)
