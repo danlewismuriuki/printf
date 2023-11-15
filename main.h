@@ -29,8 +29,8 @@ int custom_print_STR(va_list arg);
  */
 typedef struct identifierStruct
 {
-    char *identifier;
-    int (*printer)(va_list);
+	char *identifier;
+	int (*printer)(va_list);
 } identifierStruct;
 
 #endif
