@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * print_binary - function that prints the binary representation of a number
- * @num: number to be printed in binary
- * @numPrinted: pointer to hold the number of characters printed
+ * print_binary - prints binary number
+ * @num: number  binary num to be printed
+ * @numPrinted: pointer
  */
 void print_binary(unsigned int num, unsigned int *numPrinted)
 {
