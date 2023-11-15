@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * custom_print_hex_base - base function for printing hexadecimal numbers
- * @hexValue: hexadecimal value to be printed
- * @caseType: case type ('a' for lowercase, 'A' for uppercase)
- * Return: number of digits printed
+ * custom_print_hex_base - func for printing hex num
+ * @hexValue: hex value
+ * @caseType: type 'a' lower, 'A' for upper
+ * Return: num of digits
  */
 int custom_print_hex_base(unsigned int hexValue, char caseType)
 {
@@ -19,9 +19,9 @@ int custom_print_hex_base(unsigned int hexValue, char caseType)
 }
 
 /**
- * custom_print_hex - prints a hexadecimal in lowercase
- * @arg: list that contains hexadecimal to print
- * Return: number of digits printed
+ * custom_print_hex - func prints a hex in lower
+ * @arg: list of hex
+ * Return: num digits
  */
 
 int custom_print_hex(va_list arg)
@@ -30,9 +30,9 @@ int custom_print_hex(va_list arg)
 }
 
 /**
- * custom_print_HEX - prints a hexadecimal in uppercase
- * @arg: list that contains hexadecimal to print
- * Return: number of digits printed
+ * custom_print_HEX - func hex in upper
+ * @arg: list of hex
+ * Return: num of digits
  */
 int custom_print_HEX(va_list arg)
 {
